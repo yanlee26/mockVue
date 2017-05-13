@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div id="test">
+    <ol>
+      <li>v-model:
+        <input v-model="msg" placeholder="please...">
+      </li>
+      <li>v-text:<mark v-text="msg"></mark</li>
+      <li >v-show :<mark v-show="isShow">hide or show</mark></li>
+      <li>v-on:click:
+        <button v-on:click="changeShow"  v-text="btn"></button>
+      </li>
+    </ol>
+  </div>
+
+  <script>
+    var vm = new Vue('#test', {
+      msg: '',
+      isShow: true,
+      btn: 'toggle',
+      changeShow() {
+        vm.$data.isShow = !vm.$data.isShow;
+      }
+    });
+  </script>
+</body>
+
+</html>
